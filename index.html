@@ -11,79 +11,146 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Video Slider */
-    .video-slider-wrapper {
-      position: relative;
+    /* Reset Default Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .video-slider {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+    /* Header */
+    header {
+      background-color: hsl(0, 20%, 96%);
+      padding: 15px 0;
+      color: #ffffff;
+    }
+
+    .header-flex {  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-flex nav ul {
+      list-style: none;
       display: flex;
       gap: 20px;
-      padding: 10px 0;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
     }
 
-    .video-slider::-webkit-scrollbar {
-      display: none;
+    .header-flex nav ul li a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
-    .video-frame {
-      flex: 0 0 320px;
-      scroll-snap-align: start;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    .header-flex .header-image img {
+      width: 120px;
+      height: auto;
+      border-radius: 8px;
     }
 
-    .video-frame iframe {
-      width: 100%;
-      height: 180px;
+    /* Hero Section */
+    .hero {
+      background: url('ive.jpg') no-repeat center center;
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #333;
+      text-align: center;
     }
 
-    .nav-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+    /* Main Content */
+    main {
+      padding: 20px;
+    }
+
+    .section-horizontal {
+      margin-bottom: 40px;
+    }
+
+    .section-horizontal h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-horizontal p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
       color: white;
-      border: none;
-      font-size: 20px;
-      padding: 10px;
-      cursor: pointer;
-      z-index: 1;
-      border-radius: 50%;
+      padding: 15px 0;
+      text-align: center;
     }
 
-    .nav-button.left {
-      left: -10px;
-    }
-
-    .nav-button.right {
-      right: -10px;
-    }
-
+    /* Responsiveness */
     @media (max-width: 768px) {
-      .nav-button {
-        display: none;
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-flex .header-image img {
+        width: 100px;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      .section-horizontal h2 {
+        font-size: 1.5rem;
+      }
+
+      .section-horizontal p {
+        font-size: 0.9rem;
       }
     }
 
-    /* Hover efek untuk galeri */
-    .galeri-item img {
-      transition: transform 0.3s ease;
-    }
+    /* For Mobile Devices */
+    @media (max-width: 480px) {
+      .hero {
+        height: 250px;
+      }
 
-    .galeri-item img:hover {
-      transform: scale(1.05);
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="container header-flex">
       <div class="logo">
@@ -92,7 +159,7 @@
       <nav>
         <ul>
           <li><a href="#home">Beranda</a></li>
-          <li><a href="tentang.html">Tentang</a></li> <!-- Link ke halaman tentang -->
+          <li><a href="tentang.html">Tentang</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="kontak.html">Kontak</a></li>
@@ -106,6 +173,7 @@
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-text">
       <h1>Anyeong Yorobun!</h1>
@@ -113,15 +181,16 @@
     </div>
   </section>
 
+  <!-- Main Content -->
   <main class="container">
     <section id="tentang" class="section-horizontal">
       <h2>Tentang IVE</h2>
       <p>IVE adalah grup idola wanita dari Korea Selatan yang dibentuk oleh Starship Entertainment pada tahun 2021. Terdiri dari enam anggota yaitu Gaeul, Yujin, Rei, Wonyoung, Liz, dan Leeseo. Mereka debut pada 1 Desember 2021 dengan single album "Eleven". Nama IVE berasal dari "I Have", mencerminkan ambisi dan kepercayaan diri para anggotanya.</p>
     </section>
-
     <!-- Bagian lainnya -->
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; Diffa Algifari Adzsa. Semua Hak Dilindungi.</p>

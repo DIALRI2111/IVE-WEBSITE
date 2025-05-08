@@ -3,8 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri - IVE</title>
+  <title>Beranda - IVE</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .anggota-grid, .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .anggota-item, .video-item {
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .anggota-item:hover, .video-item:hover {
+      transform: scale(1.05);
+    }
+
+    .anggota-item img, .video-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .anggota-item figcaption, .video-item figcaption {
+      margin-top: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .anggota-item a, .video-item a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+      position: relative;
+    }
+
+    .anggota-item a::after {
+      content: "→";
+      position: absolute;
+      right: -20px;
+      opacity: 0;
+      transition: right 0.3s ease, opacity 0.3s ease;
+    }
+
+    .anggota-item:hover a::after {
+      right: -5px;
+      opacity: 1;
+    }
+
+    h3.section-title {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,7 +75,7 @@
       </div>
       <nav>
         <ul>
-          <li><a href="index.html">Beranda</a></li>
+          <li><a href="index.html" class="active">Beranda</a></li>
           <li><a href="tentang.html">Tentang</a></li>
           <li><a href="berita.html">Berita</a></li>
           <li><a href="galeri.html">Galeri</a></li>
@@ -25,26 +86,78 @@
   </header>
 
   <main class="container">
-    <section id="galeri">
-      <h2>Galeri Anggota</h2>
-      <div class="galeri-grid">
-        <figure>
-          <img src="liz.jpg" alt="Liz">
-          <figcaption>Liz</figcaption>
+    <section id="beranda">
+      <h3>Selamat Datang di Website IVE</h3>
+      <p>Website resmi untuk mengenal lebih dekat dengan girl group IVE. Dapatkan informasi tentang anggota, berita, dan galeri di sini.</p>
+
+      <!-- Galeri Anggota -->
+      <div class="anggota-grid">
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Yujin" target="_blank">
+            <img src="yujin.jpg" alt="Yujin">
+            <figcaption>Yujin</figcaption>
+          </a>
         </figure>
-        <figure>
-          <img src="rei.jpg" alt="Rei">
-          <figcaption>Rei</figcaption>
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Gaeul" target="_blank">
+            <img src="gaeul.jpg" alt="Gaeul">
+            <figcaption>Gaeul</figcaption>
+          </a>
         </figure>
-        <figure>
-          <img src="leeseo.jpg" alt="Leeseo">
-          <figcaption>Leeseo</figcaption>
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Rei" target="_blank">
+            <img src="rei.jpg" alt="Rei">
+            <figcaption>Rei</figcaption>
+          </a>
         </figure>
-        <figure>
-          <img src="gaeul.jpg" alt="Gaeul">
-          <figcaption>Gaeul</figcaption>
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Wonyoung" target="_blank">
+            <img src="wonyoung.jpg" alt="Wonyoung">
+            <figcaption>Wonyoung</figcaption>
+          </a>
+        </figure>
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Liz" target="_blank">
+            <img src="liz.jpg" alt="Liz">
+            <figcaption>Liz</figcaption>
+          </a>
+        </figure>
+        <figure class="anggota-item">
+          <a href="https://www.google.com/search?q=IVE+Leeseo" target="_blank">
+            <img src="leeseo.jpg" alt="Leeseo">
+            <figcaption>Leeseo</figcaption>
+          </a>
         </figure>
       </div>
+
+      <!-- Video Section -->
+      <h3 class="section-title">Video Populer IVE</h3>
+      <div class="video-scroll-wrapper">
+        <div class="video-scroll">
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" title="LOVE DIVE" frameborder="0" allowfullscreen></iframe>
+            <figcaption>LOVE DIVE</figcaption>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" title="ELEVEN" frameborder="0" allowfullscreen></iframe>
+            <figcaption>ELEVEN</figcaption>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" title="I AM" frameborder="0" allowfullscreen></iframe>
+            <figcaption>I AM</figcaption>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" title="Kitsch" frameborder="0" allowfullscreen></iframe>
+            <figcaption>Kitsch</figcaption>
+          </div>
+          <div class="video-item">
+            <iframe src="https://www.youtube.com/embed/Y6LiDLAmS_A" title="After LIKE" frameborder="0" allowfullscreen></iframe>
+            <figcaption>After LIKE</figcaption>
+          </div>
+        </div>
+      </div>
+      
+
     </section>
   </main>
 
@@ -53,6 +166,5 @@
       <p>&copy; 2025 Diffa Algifari Adzsa. Semua Hak Dilindungi.</p>
     </div>
   </footer>
-
 </body>
 </html>

@@ -92,11 +92,10 @@
       <nav>
         <ul>
           <li><a href="#home">Beranda</a></li>
-          <li><a href="#tentang">Tentang</a></li>
-          <li><a href="#berita">Berita</a></li>
-          <li><a href="#galeri">Galeri</a></li>
-          <li><a href="#kontak">Kontak</a></li>
-          <li><a href="#video">Video</a></li>
+          <li><a href="tentang.html">Tentang</a></li> <!-- Link ke halaman tentang -->
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
       <div class="header-image">
@@ -120,112 +119,7 @@
       <p>IVE adalah grup idola wanita dari Korea Selatan yang dibentuk oleh Starship Entertainment pada tahun 2021. Terdiri dari enam anggota yaitu Gaeul, Yujin, Rei, Wonyoung, Liz, dan Leeseo. Mereka debut pada 1 Desember 2021 dengan single album "Eleven". Nama IVE berasal dari "I Have", mencerminkan ambisi dan kepercayaan diri para anggotanya.</p>
     </section>
 
-    <section id="berita" class="section-horizontal">
-      <h2>Berita Terbaru</h2>
-      <div class="berita-list">
-        <article class="berita-item">
-          <img src="wonyoung.jpg" alt="Jang Wonyoung">
-          <div>
-            <h3>Wonyoung Bahas Karier</h3>
-            <p>"Aku menganggap semuanya serius. Aku mudah bosan jika hanya fokus pada satu hal, jadi aku selalu ingin mencoba hal baru," kata Wonyoung tentang karier idol dan model.</p>
-          </div>
-        </article>
-
-        <article class="berita-item">
-          <img src="yujin.jpg" alt="Yujin">
-          <div>
-            <h3>Yujin Jadi MC Acara Kencan</h3>
-            <p>Yujin, kelahiran 2003, dikabarkan jadi MC acara kencan. Banyak penggemar menyuarakan pendapat bahwa usianya masih terlalu muda untuk tema acara seperti ini.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="video" class="section-horizontal">
-      <h2>Video Musik IVE</h2>
-      <div class="video-slider-wrapper">
-        <button class="nav-button left" onclick="scrollSlider(-1)"><i class="fas fa-chevron-left"></i></button>
-        <div class="video-slider" id="videoSlider">
-          <div class="video-frame">
-            <iframe 
-              src="https://www.youtube.com/embed/okVTSehE414" 
-              frameborder="0" 
-              allowfullscreen 
-              onload="checkVideoAvailability(this)"
-              onerror="handleVideoError(this, 'https://www.youtube.com/watch?v=okVTSehE414')">
-            </iframe>
-          </div>
-          
-          <div class="video-frame">
-            <iframe 
-              src="https://www.youtube.com/embed/6ZUIwj3FgUY" 
-              frameborder="0" 
-              allowfullscreen 
-              onload="checkVideoAvailability(this)"
-              onerror="handleVideoError(this, 'https://www.youtube.com/watch?v=6ZUIwj3FgUY')">
-            </iframe>
-          </div>
-          
-          <div class="video-frame">
-            <iframe 
-              src="https://www.youtube.com/embed/g36q0ZLvygQ" 
-              frameborder="0" 
-              allowfullscreen 
-              onload="checkVideoAvailability(this)"
-              onerror="handleVideoError(this, 'https://www.youtube.com/watch?v=g36q0ZLvygQ')">
-            </iframe>
-          </div>
-          
-                 </div>
-        <button class="nav-button right" onclick="scrollSlider(1)"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </section>
-    
-    <section id="galeri" class="section-horizontal">
-      <h2>Galeri Anggota</h2>
-      <div class="galeri-grid">
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/Liz_(penyanyi_Korea_Selatan)" target="_blank" title="Profil Liz"><img src="liz.jpg" alt="Liz"><figcaption>Liz</figcaption></a>
-        </figure>
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/Naoi_Rei" target="_blank" title="Profil Rei"><img src="rei.jpg" alt="Rei"><figcaption>Rei</figcaption></a>
-        </figure>
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/leeseo" target="_blank" title="Profil Leeseo"><img src="leeseo.jpg" alt="Leeseo"><figcaption>Leeseo</figcaption></a>
-        </figure>
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/Gaeul" target="_blank" title="Profil Gaeul"><img src="gaeul.jpg" alt="Gaeul"><figcaption>Gaeul</figcaption></a>
-        </figure>
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/An_Yu-jin" target="_blank" title="Profil Yujin"><img src="yujin.jpg" alt="Yujin"><figcaption>Yujin</figcaption></a>
-        </figure>
-        <figure class="galeri-item">
-          <a href="https://id.wikipedia.org/wiki/Jang_Won-young" target="_blank" title="Profil Wonyoung"><img src="wonyoung.jpg" alt="Wonyoung"><figcaption>Wonyoung</figcaption></a>
-        </figure>
-      </div>
-    </section>
-
-    <section id="kontak" class="section-horizontal kontak-section">
-      <h2>Hubungi Kami</h2>
-      <div class="kontak-container">
-        <div class="kontak-item">
-          <h3>Email</h3>
-          <p><a href="mailto:ivesstarship@email.com">ivesstarship@email.com</a></p>
-        </div>
-        <div class="kontak-item">
-          <h3>Telepon</h3>
-          <p>(021) 4684 9643 54</p>
-        </div>
-        <div class="kontak-item">
-          <h3>Instagram</h3>
-          <p><a href="https://www.instagram.com/ivestarship" target="_blank">@ivestarship</a></p>
-        </div>
-        <div class="kontak-item">
-          <h3>YouTube Channel</h3>
-          <p><a href="https://www.youtube.com/@IVEstarship" target="_blank">IVE Official YouTube</a></p>
-        </div>
-      </div>
-    </section>
+    <!-- Bagian lainnya -->
   </main>
 
   <footer>

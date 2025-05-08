@@ -36,6 +36,7 @@
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px;
+      flex-wrap: wrap; /* Memastikan elemen bisa melipat ke bawah pada perangkat kecil */
     }
 
     .header-flex nav ul {
@@ -60,7 +61,7 @@
 
     /* Hero Section */
     .hero {
-      background: url('ive.jpg') no-repeat center center;
+      background: url('hero-background.jpg') no-repeat center center;
       background-size: cover;
       height: 300px;
       display: flex;
@@ -131,6 +132,15 @@
       .section-horizontal p {
         font-size: 0.9rem;
       }
+
+      .header-flex nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .header-flex nav ul li a {
+        font-size: 14px;
+      }
     }
 
     /* For Mobile Devices */
@@ -146,7 +156,53 @@
       .hero-text p {
         font-size: 1rem;
       }
+
+      .header-flex .header-image img {
+        width: 80px;
+      }
+
+      .section-horizontal h2 {
+        font-size: 1.3rem;
+      }
+
+      .section-horizontal p {
+        font-size: 0.9rem;
+      }
+
+      .section-horizontal ul {
+        padding-left: 15px;
+      }
     }
+
+    /* Styling untuk Section Galeri dan Berita */
+    .section-horizontal img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    
+    .section-horizontal .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-horizontal ul {
+      padding-left: 20px;
+      list-style: none;
+    }
+
+    .section-horizontal ul li {
+      margin-bottom: 10px;
+    }
+
+    .section-horizontal ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
   </style>
 </head>
 <body>
@@ -160,7 +216,7 @@
         <ul>
           <li><a href="#home">Beranda</a></li>
           <li><a href="tentang.html">Tentang</a></li>
-          <li><a href="berita.html">Berita</a></li>
+          <li><a href="berita.html">Berita</a></li> <!-- Tombol Berita tetap ada -->
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
@@ -185,10 +241,10 @@
   <main class="container">
     <section id="tentang" class="section-horizontal">
       <h2>Tentang IVE</h2>
-      <p>IVE adalah grup idola wanita dari Korea Selatan yang dibentuk oleh Starship Entertainment pada tahun 2021. Terdiri dari enam anggota yaitu Gaeul, Yujin, Rei, Wonyoung, Liz, dan Leeseo. Mereka debut pada 1 Desember 2021 dengan single album "Eleven". Nama IVE berasal dari "I Have", mencerminkan ambisi dan kepercayaan diri para anggotanya.</p>
+      <div class="content">
+        <p>IVE adalah grup idola wanita dari Korea Selatan yang dibentuk oleh Starship Entertainment pada tahun 2021. Terdiri dari enam anggota yaitu Gaeul, Yujin, Rei, Wonyoung, Liz, dan Leeseo. Mereka debut pada 1 Desember 2021 dengan single album "Eleven". Nama IVE berasal dari "I Have", mencerminkan ambisi dan kepercayaan diri para anggotanya.</p>
+      </div>
     </section>
-    <!-- Bagian lainnya -->
-  </main>
 
   <!-- Footer -->
   <footer>

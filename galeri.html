@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beranda - IVE</title>
+  <title>Galeri - IVE</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .anggota-grid, .video-grid {
@@ -24,7 +24,7 @@
       transform: scale(1.05);
     }
 
-    .anggota-item img, .video-item img {
+    .anggota-item img, .video-item iframe {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -39,7 +39,7 @@
       font-size: 16px;
     }
 
-    .anggota-item a, .video-item a {
+    .anggota-item a {
       text-decoration: none;
       color: inherit;
       display: inline-block;
@@ -65,20 +65,70 @@
       font-size: 24px;
       color: #333;
     }
+
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: background-color 0.3s;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+      background-color: #f2f2f2;
+      border-radius: 5px;
+    }
+
+    .video-grid iframe {
+      height: 200px;
+    }
+
+    footer {
+      background-color: #333;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
       <div class="logo">
         <img src="Ive.png" alt="Logo IVE">
       </div>
       <nav>
         <ul>
-          <li><a href="index.html" class="active">Beranda</a></li>
+          <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang</a></li>
           <li><a href="berita.html">Berita</a></li>
-          <li><a href="galeri.html">Galeri</a></li>
+          <li><a href="galeri.html" class="active">Galeri</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </nav>
@@ -86,79 +136,73 @@
   </header>
 
   <main class="container">
-    <section id="beranda">
-      <h3>Selamat Datang di Website IVE</h3>
-      <p>Website resmi untuk mengenal lebih dekat dengan girl group IVE. Dapatkan informasi tentang anggota, berita, dan galeri di sini.</p>
+    <h3 class="section-title">Galeri Anggota IVE</h3>
+    <div class="anggota-grid">
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Yujin" target="_blank">
+          <img src="yujin.jpg" alt="Yujin">
+          <figcaption>Yujin</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Gaeul" target="_blank">
+          <img src="gaeul.jpg" alt="Gaeul">
+          <figcaption>Gaeul</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Rei" target="_blank">
+          <img src="rei.jpg" alt="Rei">
+          <figcaption>Rei</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Wonyoung" target="_blank">
+          <img src="wonyoung.jpg" alt="Wonyoung">
+          <figcaption>Wonyoung</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Liz" target="_blank">
+          <img src="liz.jpg" alt="Liz">
+          <figcaption>Liz</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Leeseo" target="_blank">
+          <img src="leeseo.jpg" alt="Leeseo">
+          <figcaption>Leeseo</figcaption>
+        </a>
+      </figure>
+    </div>
 
-      <!-- Galeri Anggota -->
-      <div class="anggota-grid">
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Yujin" target="_blank">
-            <img src="yujin.jpg" alt="Yujin">
-            <figcaption>Yujin</figcaption>
-          </a>
-        </figure>
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Gaeul" target="_blank">
-            <img src="gaeul.jpg" alt="Gaeul">
-            <figcaption>Gaeul</figcaption>
-          </a>
-        </figure>
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Rei" target="_blank">
-            <img src="rei.jpg" alt="Rei">
-            <figcaption>Rei</figcaption>
-          </a>
-        </figure>
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Wonyoung" target="_blank">
-            <img src="wonyoung.jpg" alt="Wonyoung">
-            <figcaption>Wonyoung</figcaption>
-          </a>
-        </figure>
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Liz" target="_blank">
-            <img src="liz.jpg" alt="Liz">
-            <figcaption>Liz</figcaption>
-          </a>
-        </figure>
-        <figure class="anggota-item">
-          <a href="https://www.google.com/search?q=IVE+Leeseo" target="_blank">
-            <img src="leeseo.jpg" alt="Leeseo">
-            <figcaption>Leeseo</figcaption>
-          </a>
-        </figure>
-      </div>
+    <!-- Video Section -->
+<h3 class="section-title">Video Populer IVE</h3>
+<div class="video-scroll-wrapper">
+  <div class="video-scroll">
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" title="LOVE DIVE" frameborder="0" allowfullscreen></iframe>
+      <figcaption>LOVE DIVE</figcaption>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" title="ELEVEN" frameborder="0" allowfullscreen></iframe>
+      <figcaption>ELEVEN</figcaption>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" title="I AM" frameborder="0" allowfullscreen></iframe>
+      <figcaption>I AM</figcaption>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" title="Kitsch" frameborder="0" allowfullscreen></iframe>
+      <figcaption>Kitsch</figcaption>
+    </div>
+    <div class="video-item">
+      <iframe src="https://www.youtube.com/embed/Y6LiDLAmS_A" title="After LIKE" frameborder="0" allowfullscreen></iframe>
+      <figcaption>After LIKE</figcaption>
+    </div>
+  </div>
+</div>
 
-      <!-- Video Section -->
-      <h3 class="section-title">Video Populer IVE</h3>
-      <div class="video-scroll-wrapper">
-        <div class="video-scroll">
-          <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" title="LOVE DIVE" frameborder="0" allowfullscreen></iframe>
-            <figcaption>LOVE DIVE</figcaption>
-          </div>
-          <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" title="ELEVEN" frameborder="0" allowfullscreen></iframe>
-            <figcaption>ELEVEN</figcaption>
-          </div>
-          <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" title="I AM" frameborder="0" allowfullscreen></iframe>
-            <figcaption>I AM</figcaption>
-          </div>
-          <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" title="Kitsch" frameborder="0" allowfullscreen></iframe>
-            <figcaption>Kitsch</figcaption>
-          </div>
-          <div class="video-item">
-            <iframe src="https://www.youtube.com/embed/Y6LiDLAmS_A" title="After LIKE" frameborder="0" allowfullscreen></iframe>
-            <figcaption>After LIKE</figcaption>
-          </div>
-        </div>
-      </div>
-      
-
-    </section>
   </main>
 
   <footer>

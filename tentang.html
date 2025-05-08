@@ -1,83 +1,136 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dashboard - IVE</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang IVE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* Tambahan khusus untuk halaman Dashboard */
-    .dashboard-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .dashboard-header {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fdfbfd;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .header-flex {
+      max-width: 1200px;
+      margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0 20px;
     }
 
-    .dashboard-header h1 {
-      font-size: 2rem;
-      color: #333;
+    .logo img {
+      width: 120px;
+      border-radius: 8px;
     }
 
-    .dashboard-menu {
+    nav ul {
       display: flex;
+      list-style: none;
       gap: 20px;
     }
 
-    .dashboard-menu a {
-      font-weight: 600;
-      color: #e91e63;
+    nav ul li a {
       text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      color: #333;
+      font-weight: 600;
+      padding: 8px 14px;
+      transition: 0.3s;
     }
 
-    .dashboard-menu a:hover {
-      background-color: #f0f0f0;
+    nav ul li a:hover {
+      background-color: #fce4ec;
+      border-radius: 6px;
+      color: #e91e63;
     }
 
-    .dashboard-content {
-      margin-top: 30px;
+    .hero {
+      position: relative;
+      background: url('hero-background.jpg') center/cover no-repeat;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
     }
 
-    .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .content h2 {
+      color: #e91e63;
       margin-bottom: 20px;
     }
 
-    .card h2 {
-      color: #e91e63;
-    }
-
-    .card p {
-      color: #333;
+    .content p {
       font-size: 1rem;
       line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="header-flex">
       <div class="logo">
-        <img src="Ive.png" alt="Logo IVE">
+        <a href="index.html"><img src="Ive.png" alt="Logo IVE"></a>
       </div>
       <nav>
         <ul>
           <li><a href="index.html">Beranda</a></li>
           <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="berita.html">Berita</a></li>
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
@@ -85,40 +138,36 @@
     </div>
   </header>
 
-  <div class="dashboard-container">
-    <div class="dashboard-header">
-      <h1>Selamat Datang, Yorobun</h1>
-      <div class="dashboard-content">
-        <div class="card">
-          <h2>Tentang IVE</h2>
-          <p><strong>IVE</strong> adalah girl group asal Korea Selatan yang dibentuk oleh <strong>Starship Entertainment</strong>. Mereka resmi debut pada <strong>1 Desember 2021</strong> dengan single album <em>"Eleven"</em>.</p>
-          <p>IVE dikenal dengan konsep "I HAVE", yang menggambarkan rasa percaya diri dan pesona yang dimiliki masing-masing anggota sejak awal debut mereka.</p>
-          <p>Anggota grup ini antara lain:</p>
-          <ul>
-            <li>Yujin (Leader)</li>
-            <li>Gaeul</li>
-            <li>Rei</li>
-            <li>Wonyoung</li>
-            <li>Liz</li>
-            <li>Leeseo</li>
-          </ul>
-        </div>
-      
-        <div class="card">
-          <h2>Galeri IVE</h2>
-          <p>Berikut adalah beberapa momen ikonik dari grup IVE. Anda bisa melihat lebih banyak foto dan video tentang mereka di galeri kami.</p>
-          <!-- Anda bisa menambahkan galeri gambar atau video di sini -->
-          <div class="galeri-grid">
-            <figure class="galeri-item">
-              <img src="ive-group.jpg" alt="Foto Grup IVE">
-              <figcaption>IVE Grup Foto</figcaption>
-            </figure>
-            <!-- Tambahkan lebih banyak gambar sesuai kebutuhan -->
-          </div>
-        </div>
-      </div>
-      
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Tentang IVE</h1>
     </div>
-  </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="content">
+      <h2>Profil Singkat</h2>
+      <p><strong>IVE</strong> adalah girl group Korea Selatan di bawah naungan <strong>Starship Entertainment</strong>. Mereka resmi debut pada <strong>1 Desember 2021</strong> dengan lagu hit "Eleven". Konsep mereka menonjolkan kepercayaan diri dan pesona alami para anggota yang disebut sebagai "I HAVE".</p>
+      <p>Grup ini terdiri dari enam anggota dengan bakat unik dan visual yang menawan. Mereka telah meraih banyak penghargaan sejak debut dan terus berkembang secara global.</p>
+
+      <h2>Anggota IVE</h2>
+      <ul>
+        <li><strong>Yujin</strong> – Leader, Vocalist</li>
+        <li><strong>Gaeul</strong> – Rapper, Dancer</li>
+        <li><strong>Rei</strong> – Rapper, Vocalist</li>
+        <li><strong>Wonyoung</strong> – Center, Vocalist</li>
+        <li><strong>Liz</strong> – Main Vocalist</li>
+        <li><strong>Leeseo</strong> – Maknae, Vocalist</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Diffa Algifari Adzsa. Semua Hak Dilindungi.</p>
+  </footer>
+
 </body>
 </html>

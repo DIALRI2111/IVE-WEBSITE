@@ -205,6 +205,31 @@
       font-weight: bold;
     }
 
+    /* Styling untuk Tombol */
+    .button-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .ive-button {
+      background-color: #e91e63;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .ive-button:hover {
+      background-color: #c2185b;
+      transform: translateY(-2px);
+    }
+
   </style>
 </head>
 <body>
@@ -218,7 +243,7 @@
         <ul>
           <li><a href="#home">Beranda</a></li>
           <li><a href="tentang.html">Tentang</a></li>
-          <li><a href="berita.html">Berita</a></li> <!-- Tombol Berita tetap ada -->
+          <li><a href="berita.html">Berita</a></li>
           <li><a href="galeri.html">Galeri</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
@@ -247,6 +272,14 @@
         <p>IVE adalah grup idola wanita dari Korea Selatan yang dibentuk oleh Starship Entertainment pada tahun 2021. Terdiri dari enam anggota yaitu Gaeul, Yujin, Rei, Wonyoung, Liz, dan Leeseo. Mereka debut pada 1 Desember 2021 dengan single album "Eleven". Nama IVE berasal dari "I Have", mencerminkan ambisi dan kepercayaan diri para anggotanya.</p>
       </div>
     </section>
+
+    <!-- Tombol Galeri dan Video -->
+    <div class="button-container">
+      <button class="ive-button" onclick="window.location.href='galeri.html'">Lihat Galeri</button>
+      <button class="ive-button" onclick="window.location.href='https://youtube.com/@IVEstarship'">Tonton Video</button>
+    </div>
+
+  </main>
 
   <!-- Footer -->
   <footer>

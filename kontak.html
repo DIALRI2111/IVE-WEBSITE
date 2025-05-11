@@ -49,14 +49,23 @@
       justify-content: space-between;
     }
     .logo img { height: 50px; }
+    nav {
+      overflow-x: auto;            /* enable horizontal scroll */
+      -webkit-overflow-scrolling: touch;
+    }
     nav ul {
       display: flex;
       gap: 20px;
       list-style: none;
+      white-space: nowrap;         /* prevent wrapping */
+    }
+    nav ul li {
+      flex: 0 0 auto;              /* keep each item its width */
     }
     nav ul a {
       padding: 8px 12px; font-weight: 600; color: #333;
       transition: background 0.3s;
+      display: block;
     }
     nav ul a:hover,
     nav ul .active {
@@ -138,7 +147,8 @@
 
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
-      nav ul { flex-direction: column; gap: 10px; }
+      /* keep nav horizontal, only shrink items */
+      nav ul { gap: 12px; }
       .kontak-section { padding: 40px 20px; }
       .kontak-section h2 { font-size: 1.75rem; }
       .kontak-item { padding: 16px; }
@@ -207,22 +217,20 @@
   </footer>
 
   <script>
-    // Debounce helper
-    function debounce(fn, delay) {
+    // Debounced hide/show header
+    function debounce(fn, d) {
       let t;
-      return function() {
+      return () => {
         clearTimeout(t);
-        t = setTimeout(() => fn.apply(this, arguments), delay);
+        t = setTimeout(fn, d);
       };
     }
-
-    // Hide on scroll down, show on scroll up
     const hdr = document.getElementById('header');
     let prevY = window.pageYOffset;
     window.addEventListener('scroll', debounce(() => {
-      const currY = window.pageYOffset;
-      hdr.style.top = currY < prevY ? '0' : '-80px';
-      prevY = currY;
+      const curY = window.pageYOffset;
+      hdr.style.top = curY < prevY ? '0' : '-80px';
+      prevY = curY;
     }, 50));
   </script>
 </body>

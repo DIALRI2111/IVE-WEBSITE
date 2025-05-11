@@ -265,6 +265,32 @@ nav ul li a.active {
   height: 200px;
   border-radius: 10px;
 }
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.video-item {
+  text-align: center;
+  padding: 10px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-5px);
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+}
+
 
 
 

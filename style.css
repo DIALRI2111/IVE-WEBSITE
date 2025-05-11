@@ -6,6 +6,17 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main.container {
+  min-height: calc(100vh - 160px);
+  padding-bottom: 40px;
+}
+
 body {
   line-height: 1.6;
   background-color: #f9f9f9;

@@ -42,4 +42,8 @@ function handleVideoError(iframe, videoUrl) {
   // Gantikan iframe dengan pesan error dan link ke YouTube
   iframe.outerHTML = `<div class="video-error">Video tidak tersedia. <a href="${videoUrl}" target="_blank">Tonton di YouTube</a></div>`;
 }
+// Di JavaScript
+function toggleMenu() {
+  document.querySelector("nav ul").classList.toggle("show");
+}
 

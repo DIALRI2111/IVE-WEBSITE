@@ -20,7 +20,7 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background: 
+      background:
         linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
         url('ive-bg.jpg') center/cover no-repeat fixed;
       color: #fff;
@@ -35,7 +35,8 @@
 
     /* ===== Header ===== */
     header {
-      position: fixed; top: 0; left: 0; width: 100%;
+      position: fixed;
+      top: 0; left: 0; width: 100%;
       background: rgba(255,255,255,0.9);
       padding: 15px 0;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -43,11 +44,14 @@
       transition: top 0.3s ease;
     }
     header .container {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo img { height: 50px; }
     nav ul {
-      display: flex; gap: 20px;
+      display: flex;
+      gap: 20px;
       list-style: none;
     }
     nav ul a {
@@ -55,13 +59,18 @@
       transition: background 0.3s;
     }
     nav ul a:hover,
-    nav ul .active { background: #e0e0e0; border-radius: 4px; }
+    nav ul .active {
+      background: #e0e0e0;
+      border-radius: 4px;
+    }
 
     /* ===== Main & Footer ===== */
-    main { padding-top: 80px; /* ruang header */ }
+    main { padding-top: 80px; }
     footer {
-      background: rgba(0,0,0,0.7); color: #fff;
-      text-align: center; padding: 20px 0;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
       margin-top: 50px;
     }
 
@@ -95,7 +104,6 @@
       padding: 20px;
       text-align: center;
       transition: transform 0.3s, background 0.3s;
-      position: relative;
     }
     .kontak-item:hover {
       transform: translateY(-4px);
@@ -199,14 +207,23 @@
   </footer>
 
   <script>
-    // Hide header on scroll down, show on scroll up
-    let prev = window.pageYOffset;
+    // Debounce helper
+    function debounce(fn, delay) {
+      let t;
+      return function() {
+        clearTimeout(t);
+        t = setTimeout(() => fn.apply(this, arguments), delay);
+      };
+    }
+
+    // Hide on scroll down, show on scroll up
     const hdr = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-      const cur = window.pageYOffset;
-      hdr.style.top = (cur < prev ? '0' : '-80px');
-      prev = cur;
-    });
+    let prevY = window.pageYOffset;
+    window.addEventListener('scroll', debounce(() => {
+      const currY = window.pageYOffset;
+      hdr.style.top = currY < prevY ? '0' : '-80px';
+      prevY = currY;
+    }, 50));
   </script>
 </body>
 </html>

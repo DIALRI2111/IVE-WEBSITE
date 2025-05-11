@@ -94,25 +94,25 @@
     }
 
     /* Galeri Styles */
-    .anggota-grid, .video-grid {
+    .anggota-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 20px;
       margin-top: 30px;
     }
 
-    .anggota-item, .video-item {
+    .anggota-item {
       text-align: center;
       position: relative;
       overflow: hidden;
       transition: transform 0.3s ease;
     }
 
-    .anggota-item:hover, .video-item:hover {
+    .anggota-item:hover {
       transform: scale(1.05);
     }
 
-    .anggota-item img, .video-item iframe {
+    .anggota-item img {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -121,30 +121,10 @@
       transition: all 0.3s ease;
     }
 
-    .anggota-item figcaption, .video-item figcaption {
+    .anggota-item figcaption {
       margin-top: 8px;
       font-weight: bold;
       font-size: 16px;
-    }
-
-    .anggota-item a {
-      text-decoration: none;
-      color: inherit;
-      display: inline-block;
-      position: relative;
-    }
-
-    .anggota-item a::after {
-      content: "→";
-      position: absolute;
-      right: -20px;
-      opacity: 0;
-      transition: right 0.3s ease, opacity 0.3s ease;
-    }
-
-    .anggota-item:hover a::after {
-      right: -5px;
-      opacity: 1;
     }
 
     h3.section-title {
@@ -154,8 +134,27 @@
       color: #333;
     }
 
-    .video-grid iframe {
+    /* Video Scroll Container */
+    .video-scroll-container {
+      overflow-x: auto;
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      scroll-behavior: smooth;
+    }
+
+    .video-item {
+      flex-shrink: 0;
+      width: 300px;
       height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
     }
 
     footer {
@@ -243,23 +242,20 @@
 
     <!-- Video Section -->
     <h3 class="section-title">Video Populer IVE</h3>
-    <div class="video-grid">
+    <div class="video-scroll-container">
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" title="LOVE DIVE" frameborder="0" allowfullscreen></iframe>
-        <figcaption>LOVE DIVE</figcaption>
+        <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" title="ELEVEN" frameborder="0" allowfullscreen></iframe>
-        <figcaption>ELEVEN</figcaption>
+        <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" title="I AM" frameborder="0" allowfullscreen></iframe>
-        <figcaption>I AM</figcaption>
+        <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" title="Kitsch" frameborder="0" allowfullscreen></iframe>
-        <figcaption>Kitsch</figcaption>
+        <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" frameborder="0" allowfullscreen></iframe>
       </div>
+    </div>
   </main>
 
   <!-- Footer -->

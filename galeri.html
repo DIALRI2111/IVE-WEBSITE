@@ -249,5 +249,27 @@
       <p>&copy; 2025 Diffa Algifari Adzsa. Semua Hak Dilindungi.</p>
     </div>
   </footer>
+  <script>
+    // Debounced hide/show header
+    function debounce(fn, d) {
+      let t;
+      return () => {
+        clearTimeout(t);
+        t = setTimeout(fn, d);
+      };
+    }
+    const hdr = document.getElementById('header');
+    let prevY = window.pageYOffset;
+    window.addEventListener('scroll', debounce(() => {
+      const curY = window.pageYOffset;
+      hdr.style.top = curY < prevY ? '0' : '-80px';
+      prevY = curY;
+    }, 50));
+  </script>
+
+
+
+
+
 </body>
 </html>

@@ -1,550 +1,271 @@
-/* Tambahan: Hamburger Menu */
-.menu-toggle {
-  display: none;
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: 10px;
-}
+<!DOCTYPE html>
 
-/* Global */
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galeri - IVE</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+```
+/* Reset Default Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-main.container {
-  min-height: calc(100vh - 160px);
-  padding-bottom: 40px;
-}
-
-body {
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 /* Header */
 header {
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 10px 0;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
-.header-flex {
+.header-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 20px;
+  overflow-x: auto;                /* enable horizontal scroll */
+  white-space: nowrap;             /* prevent wrapping */
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  flex-wrap: nowrap;               /* keep items on one line */
 }
 
 .logo img {
   height: 50px;
+  flex: 0 0 auto;
 }
 
+/* Navigation */
+nav {
+  flex: 1 1 auto;
+}
 nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
-
+nav ul li {
+  flex: 0 0 auto;
+}
 nav ul li a {
+  text-decoration: none;
+  color: #333;
   font-weight: 600;
   padding: 8px 12px;
-  transition: 0.3s;
-  color: black;
-  text-decoration: none;
+  transition: background-color 0.3s;
+  display: block;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #e0e0e0;
+  border-radius: 5px;
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-  color: #e91e63;
+/* Social icons */
+.social-icons {
+  flex: 0 0 auto;
+}
+.social-icons a {
+  color: #333;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+  display: inline-block;
+}
+.social-icons a:hover {
+  color: #0073e6;
 }
 
-.section-title {
-  margin-top: 40px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.video-scroll-wrapper {
-  overflow-x: auto;
-  padding: 10px 0;
-}
-
-.video-scroll {
-  display: flex;
-  gap: 16px;
-  padding-bottom: 10px;
-}
-
-.video-item {
-  min-width: 300px;
-  flex-shrink: 0;
-  text-align: center;
-}
-
-.video-item iframe {
-  width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.video-item figcaption {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Header image kanan */
-.header-image img {
-  height: 40px;
-}
-
-/* Hero */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('ive-bg.jpg') no-repeat center center/cover;
-  color: white;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.hero-text h1 {
-  font-size: 2.5rem;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Section layout */
+/* Galeri Styles */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
-.section-horizontal {
-  padding: 50px 0;
-}
-
-.section-horizontal h2 {
+h3.section-title {
+  margin-top: 60px;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  color: #e91e63;
+  font-size: 24px;
+  color: #333;
 }
 
-/* Berita */
-.berita-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.berita-item {
-  display: flex;
-  gap: 15px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.berita-item img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Video */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Video Slider */
-.video-slider-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 30px 0;
-}
-
-.video-slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-}
-
-.video-slide {
-  flex: 0 0 auto;
-  width: 340px;
-  height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.video-slide iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
-
-.video-error {
-  background-color: #ffe5e5;
-  color: #990000;
-  padding: 20px;
-  text-align: center;
-  font-weight: bold;
-  border-radius: 10px;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.video-error a {
-  color: #cc0000;
-  text-decoration: underline;
-  margin-top: 8px;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-.video-item {
-  text-align: center;
-  padding: 10px;
-  background-color: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.video-item:hover {
-  transform: translateY(-5px);
-}
-
-.video-item iframe {
-  width: 100%;
-  height: 180px;
-  border-radius: 8px;
-}
-
-/* Tombol geser */
-.slider-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #e91e63;
-  color: #fff;
-  border: none;
-  padding: 10px 14px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 20px;
-  z-index: 2;
-  transition: background-color 0.3s;
-}
-
-.slider-button:hover {
-  background-color: #c2185b;
-}
-
-.slider-left {
-  left: 10px;
-}
-
-.slider-right {
-  right: 10px;
-}
-
-/* Hide scroll bar */
-.video-slider::-webkit-scrollbar {
-  display: none;
-}
-.video-slider {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Galeri */
-.galeri-grid {
+.anggota-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
-  text-align: center;
+  margin-top: 30px;
 }
 
-.galeri-item img {
+.anggota-item {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.anggota-item:hover {
+  transform: scale(1.05);
+}
+.anggota-item img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  transition: transform 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
-
-.galeri-item img:hover {
-  transform: scale(1.05);
-}
-
-.galeri-item figcaption {
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-/* Kontak */
-.kontak-section {
-  background: #fff;
-  border-radius: 12px;
-  padding: 50px 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease;
-}
-
-.kontak-section:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-.kontak-section h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #e91e63;
-  margin-bottom: 30px;
-}
-
-.kontak-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.kontak-item {
-  background: #fafafa;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.kontak-item:hover {
-  transform: translateY(-4px);
-  background: #fff;
-}
-
-.kontak-item h3 {
-  margin-bottom: 12px;
-  font-size: 1.25rem;
-  color: #e91e63;
-}
-
-.kontak-item p,
-.kontak-item a {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.5;
-}
-
-.kontak-item a {
-  display: inline-block;
+.anggota-item figcaption {
   margin-top: 8px;
-  font-weight: 600;
-  transition: color 0.3s, transform 0.3s;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.kontak-item a:hover {
-  color: #c2185b;
-  transform: translateY(-2px);
+/* Video Scroll Container */
+.video-scroll-container {
+  overflow-x: auto;
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  scroll-behavior: smooth;
 }
-
-/* Icon support */
-.kontak-item i {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #e91e63;
-  display: block;
+.video-item {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Responsif */
-@media (max-width: 480px) {
-  .kontak-section {
-    padding: 30px 20px;
-  }
-  .kontak-section h2 {
-    font-size: 1.75rem;
-  }
-  .kontak-item {
-    padding: 16px;
-  }
-  .kontak-item h3 {
-    font-size: 1.1rem;
-  }
+.video-item iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
-
 
 /* Footer */
 footer {
-  background-color: #222;
-  color: white;
-  text-align: center;
+  background-color: #333;
   padding: 20px 0;
+  text-align: center;
+  color: white;
   margin-top: 50px;
 }
+```
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" aria-label="Logo IVE">
+          <img src="Ive.png" alt="Logo IVE">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="berita.html">Berita</a></li>
+          <li><a href="galeri.html" class="active">Galeri</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/official.ive" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/IVEstarship" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/ivestarship/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </header>
 
-  .logo img {
-    height: 40px;
-  }
+  <!-- Main Content -->
 
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-  }
+  <main class="container">
+    <h3 class="section-title">Galeri Anggota IVE</h3>
+    <div class="anggota-grid">
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Yujin" target="_blank">
+          <img src="yujin.jpg" alt="Yujin">
+          <figcaption>Yujin</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Gaeul" target="_blank">
+          <img src="gaeul.jpg" alt="Gaeul">
+          <figcaption>Gaeul</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Rei" target="_blank">
+          <img src="rei.jpg" alt="Rei">
+          <figcaption>Rei</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Wonyoung" target="_blank">
+          <img src="wonyoung.jpg" alt="Wonyoung">
+          <figcaption>Wonyoung</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Liz" target="_blank">
+          <img src="liz.jpg" alt="Liz">
+          <figcaption>Liz</figcaption>
+        </a>
+      </figure>
+      <figure class="anggota-item">
+        <a href="https://www.google.com/search?q=IVE+Leeseo" target="_blank">
+          <img src="leeseo.jpg" alt="Leeseo">
+          <figcaption>Leeseo</figcaption>
+        </a>
+      </figure>
+    </div>
 
-  .hero {
-    padding: 80px 20px;
-  }
+```
+<!-- Video Section -->
+<h3 class="section-title">Video Populer IVE</h3>
+<div class="video-scroll-container">
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/F0B7HDiY-10" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/Y8JFxS1HlDo" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/6ZUIwj3FgUY" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="video-item">
+    <iframe src="https://www.youtube.com/embed/z0nXkFeJDtg" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+```
 
-  .hero-text h1 {
-    font-size: 2rem;
-  }
+  </main>
 
-  .hero-text p {
-    font-size: 1rem;
-  }
+  <!-- Footer -->
 
-  .container {
-    width: 95%;
-  }
-
-  .section-horizontal h2 {
-    font-size: 1.8rem;
-  }
-
-  .berita-item {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .berita-item img {
-    width: 100%;
-    height: auto;
-  }
-
-  .video-container {
-    padding-bottom: 75%;
-  }
-
-  .galeri-item img {
-    height: 150px;
-  }
-
-  .kontak-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .header-flex {
-    align-items: center;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    background-color: #fff;
-    width: 100%;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  nav ul.show {
-    display: flex;
-  }
-
-  .hero {
-    padding: 60px 10px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero-text p {
-    font-size: 0.9rem;
-  }
-
-  .section-horizontal h2 {
-    font-size: 1.5rem;
-  }
-
-  .video-scroll {
-    gap: 10px;
-  }
-
-  .video-item iframe {
-    height: 160px;
-  }
-
-  .berita-item {
-    padding: 8px;
-    gap: 10px;
-  }
-
-  .galeri-item img {
-    height: 120px;
-  }
-
-  .kontak-container {
-    grid-template-columns: 1fr;
-  }
-}
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Diffa Algifari Adzsa. Semua Hak Dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
